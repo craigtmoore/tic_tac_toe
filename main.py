@@ -41,7 +41,8 @@ class TicTacToe:
 
         return position
 
-    def determine_row_winner(self, row: List[str]):
+    @staticmethod
+    def determine_row_winner(row: List[str]):
         if row[0] == row[1] == row[2] != " ":
             print(f"'{row[0]}' wins! (row win)")
             return True
@@ -63,10 +64,10 @@ class TicTacToe:
                 return True
         # Determine Diagonal Winner
         if self.top_row[0] == self.middle_row[1] == self.bottom_row[2] != " ":
-            print(f"'{self.top_row[0]}' wins! (right-to-left diagonal)")
+            print(f"'{self.top_row[0]}' wins! (left-to-right diagonal)")
             return True
         if self.top_row[2] == self.middle_row[1] == self.bottom_row[0] != " ":
-            print(f"'{self.top_row[2]}' wins! (left-to-right diagonal)")
+            print(f"'{self.top_row[2]}' wins! (right-to-left diagonal)")
             return True
         return False
 
